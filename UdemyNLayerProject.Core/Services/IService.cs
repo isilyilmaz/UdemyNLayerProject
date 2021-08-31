@@ -4,10 +4,15 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UdemyNLayerProject.Core.Repositories
+namespace UdemyNLayerProject.Core.Services
 {
-    //Repository sadece veri tabanı işlemlerini gerçekleştirir.
-    public interface IRepository<TEntity> where TEntity : class
+    //IRepository ile aynı içerik, neden peki direk repository kullanılmıyor ayrıca service katmanı var?
+    // DB değişirse o zaman farklı repository oluşturmak gerekiyor.
+    // Mesela, Oracle Repository oluşturup Service katmanında değişiklik yapmak gerekmeyecek.
+
+    /*Access Modifiers: Internal, Protected, Public, Protected Internal, Private Protected, Private
+   * Diğer katmanlardan erişileceği için public olmak durumunda.*/
+    public interface IService<TEntity> where TEntity : class
     {
         // Asenkron içerik olması için Task oluşturuyoruz.
 

@@ -6,10 +6,10 @@ using System.Text;
 namespace UdemyNLayerProject.Core.Models
 {
     //Her kategori birden fazla ürüne sahip olabilir.
+
     /*Access Modifiers: Internal, Protected, Public, Protected Internal, Private Protected, Private
-     * Internal Class'lar sadece tanımlandıkları katmanlardan erişim sağlanması özelliğine sahiptirler. 
-     * Tanımlı oldukları katmanların dışından hiçbir şekilde erişilemezler.*/
-    internal class Category
+    * Diğer katmanlardan erişileceği için public olmak durumunda.*/
+    public class Category
     {
         public Category()
         {

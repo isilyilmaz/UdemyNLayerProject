@@ -4,7 +4,9 @@ using System.Text;
 
 namespace UdemyNLayerProject.Core.Models
 {
-    class Product
+    /*Access Modifiers: Internal, Protected, Public, Protected Internal, Private Protected, Private
+    * Diğer katmanlardan erişileceği için public olmak durumunda.*/
+    public class Product
     {
         public int Id { get; set; }
 

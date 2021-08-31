@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -13,6 +13,7 @@ namespace UdemyNLayerProject.API
     {
         public static void Main(string[] args)
         {
+            // Core içinde interface ve entity dışında birşey bulunmuyor.
             CreateHostBuilder(args).Build().Run();
         }
 
