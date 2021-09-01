@@ -24,3 +24,6 @@ C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.Dat
 C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.Data\obj\Debug\netcoreapp3.1\UdemyNLayerProject.Data.csproj.CopyComplete
 C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.Data\obj\Debug\netcoreapp3.1\UdemyNLayerProject.Data.dll
 C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.Data\obj\Debug\netcoreapp3.1\UdemyNLayerProject.Data.pdb
+C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.Data\bin\Debug\netcoreapp3.1\UdemyNLayerProject.Data.runtimeconfig.json
+C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.Data\bin\Debug\netcoreapp3.1\UdemyNLayerProject.Data.runtimeconfig.dev.json
+C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.Data\obj\Debug\netcoreapp3.1\UdemyNLayerProject.Data.genruntimeconfig.cache

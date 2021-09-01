@@ -12,18 +12,18 @@ namespace UdemyNLayerProject.Core.Repositories
         // Asenkron içerik olması için Task oluşturuyoruz.
 
         //id ye göre nesne getir
-        Task<TEntity> getByIdAsync(int Id);
+        Task<TEntity> getByIdAsync(int id);
 
         //tüm nesneleri getir
         Task<IEnumerable<TEntity>> getAllAsync();
 
-        // daha sonra bu şekilde kullanılabilecek; find(x=> x.id = 2)
+        // daha sonra bu şekilde kullanılabilecek; Where(x=> x.id = 2)
         //Expression<Func<TEntity, bool>> bu ifade delegate olarak geçiyor.
-        Task<IEnumerable<TEntity>> Find(Expression<Func<TEntity, bool>> Predicate);
+        IEnumerable<TEntity> Where(Expression<Func<TEntity, bool>> predicate);
 
         // daha sonra bu şekilde kullanılabilecek; Tek bir kayıt getirecek
         // category.SingleOrDefaultAsync(x=> x.name = "kalem")
-        Task<TEntity> SingleOrDefaultAsync(Expression<Func<TEntity, bool>> Predicate);
+        Task<TEntity> SingleOrDefaultAsync(Expression<Func<TEntity, bool>> predicate);
 
         //1 kayıt eklenebilir
         Task AddAsync(TEntity entity);
