@@ -10,10 +10,12 @@ using UdemyNLayerProject.Core.Repositories;
 namespace UdemyNLayerProject.Data.Repositories
 {
     //Belirttiğim TEntity generic ifade class olmak zorunda.
-    class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        public readonly DbContext _context;
-        public readonly DbSet<TEntity> _dbSet;
+        //miras aldığım yerde kullanıyorumi bu yüzden access modifier protected belirleyebilirim.
+        protected readonly DbContext _context;
+        //Sadece burada kullanıldığı için access modifier private belirleyebilirim.
+        private readonly DbSet<TEntity> _dbSet;
 
         public Repository(DbContext context)
         {
