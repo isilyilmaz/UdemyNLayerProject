@@ -12,7 +12,7 @@ namespace UdemyNLayerProject.Data.Repositories
     {
         //repository içindeki context i appdbcontext e dönüştürmem lazım. çünkü ne olduğunu biliyorum.
         private AppDbContext appDbContext { get => _context as AppDbContext; }
-        public CategoryRepository(DbContext context) : base(context)
+        public CategoryRepository(AppDbContext context) : base(context)
         {
         }
 

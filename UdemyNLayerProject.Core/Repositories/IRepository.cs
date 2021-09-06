@@ -19,7 +19,7 @@ namespace UdemyNLayerProject.Core.Repositories
 
         // daha sonra bu şekilde kullanılabilecek; Where(x=> x.id = 2)
         //Expression<Func<TEntity, bool>> bu ifade delegate olarak geçiyor.
-        IEnumerable<TEntity> Where(Expression<Func<TEntity, bool>> predicate);
+        Task<IEnumerable<TEntity>> Where(Expression<Func<TEntity, bool>> predicate);
 
         // daha sonra bu şekilde kullanılabilecek; Tek bir kayıt getirecek
         // category.SingleOrDefaultAsync(x=> x.name = "kalem")
