@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,10 +10,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UdemyNLayerProject.Core.Repositories;
+using UdemyNLayerProject.Core.Services;
 using UdemyNLayerProject.Core.UnitOfWorks;
 using UdemyNLayerProject.Data;
+using UdemyNLayerProject.Data.Repositories;
 using UdemyNLayerProject.Data.UnitOfWorks;
+using UdemyNLayerProject.Service.Services;
 
+[assembly: ApiController]
 namespace UdemyNLayerProject.API
 {
     public class Startup
@@ -27,6 +33,28 @@ namespace UdemyNLayerProject.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(Startup));
+
+            //AddScoped() ne yapar?
+            //Bir Request esnasinda IUnitOfWork ile bir classin constructer inda karsilasirsa;
+            //gidecek UnitOfWork ten bir nesne ornegi alacak.
+            //Bir request içerisinde birden fazla IUnitOfWork ile karsilasirsa
+            //ayni UnitOfWork nesnesi ile devam edecek.
+
+            //AddTransient() ne yapar?
+            //Bir request içerisinde birden fazla IUnitOfWork ile karsilasirsa
+            //her seferinde yeniden UnitOfWork nesnesi olusturur.
+            //Buda performans acisindan tercih edilmez.
+
+            //Genericler bu sekilde tanimlanir.
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped(typeof(IService<>), typeof(Service.Services.Service<>));
+
+            //Generic olmayanlar bu sekilde tanimlanir.
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            
             //veri tabani sql server kullanacak,
             //veri tabani baglantisi icinde appsettings e ekledigim bu connection string i kullanacak.
             //Migration yapacagi icinde Seedlerin bulundugu Data assembly sini vermek gerek.
@@ -41,20 +69,7 @@ namespace UdemyNLayerProject.API
             }
             );
 
-            //AddScoped() ne yapar?
-            //Bir Request esnasinda IUnitOfWork ile bir classin constructer inda karsilasirsa;
-            //gidecek UnitOfWork ten bir nesne ornegi alacak.
-            //Bir request içerisinde birden fazla IUnitOfWork ile karsilasirsa
-            //ayni UnitOfWork nesnesi ile devam edecek.
-
-            //AddTransient() ne yapar?
-            //Bir request içerisinde birden fazla IUnitOfWork ile karsilasirsa
-            //her seferinde yeniden UnitOfWork nesnesi olusturur.
-            //Buda performans acisindan tercih edilmez.
-
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
-
-            services.AddRazorPages();
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -80,7 +95,7 @@ namespace UdemyNLayerProject.API
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }

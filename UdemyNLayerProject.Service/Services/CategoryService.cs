@@ -7,7 +7,7 @@ using UdemyNLayerProject.Core.Repositories;
 using UdemyNLayerProject.Core.Services;
 using UdemyNLayerProject.Core.UnitOfWorks;
 
-namespace UdemyNLayerProject.Service
+namespace UdemyNLayerProject.Service.Services
 {
     public class CategoryService : Service<Category>, ICategoryService
     {

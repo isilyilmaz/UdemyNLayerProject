@@ -7,7 +7,7 @@ using UdemyNLayerProject.Core.Repositories;
 using UdemyNLayerProject.Core.Services;
 using UdemyNLayerProject.Core.UnitOfWorks;
 
-namespace UdemyNLayerProject.Service
+namespace UdemyNLayerProject.Service.Services
 {
     public class Service<TEntity> : IService<TEntity> where TEntity : class
     {
