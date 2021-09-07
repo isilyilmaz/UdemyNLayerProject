@@ -5880,8 +5880,6 @@
       "AutoMapper >= 10.1.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.1",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.9",
-      "UdemyNLayerProject.Core >= 1.0.0",
-      "UdemyNLayerProject.Data >= 1.0.0",
       "UdemyNLayerProject.Service >= 1.0.0"
     ]
   },
@@ -5912,12 +5910,6 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\islyl\\source\\repos\\isilyilmaz\\UdemyNLayerProject\\UdemyNLayerProject.Core\\UdemyNLayerProject.Core.csproj": {
-              "projectPath": "C:\\Users\\islyl\\source\\repos\\isilyilmaz\\UdemyNLayerProject\\UdemyNLayerProject.Core\\UdemyNLayerProject.Core.csproj"
-            },
-            "C:\\Users\\islyl\\source\\repos\\isilyilmaz\\UdemyNLayerProject\\UdemyNLayerProject.Data\\UdemyNLayerProject.Data.csproj": {
-              "projectPath": "C:\\Users\\islyl\\source\\repos\\isilyilmaz\\UdemyNLayerProject\\UdemyNLayerProject.Data\\UdemyNLayerProject.Data.csproj"
-            },
             "C:\\Users\\islyl\\source\\repos\\isilyilmaz\\UdemyNLayerProject\\UdemyNLayerProject.Service\\UdemyNLayerProject.Service.csproj": {
               "projectPath": "C:\\Users\\islyl\\source\\repos\\isilyilmaz\\UdemyNLayerProject\\UdemyNLayerProject.Service\\UdemyNLayerProject.Service.csproj"
             }
