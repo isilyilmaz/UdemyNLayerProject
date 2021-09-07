@@ -52,6 +52,8 @@ C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.API
 C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.API\bin\Debug\netcoreapp3.1\UdemyNLayerProject.API.pdb
 C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.API\bin\Debug\netcoreapp3.1\UdemyNLayerProject.API.Views.dll
 C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.API\bin\Debug\netcoreapp3.1\UdemyNLayerProject.API.Views.pdb
+C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.API\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.API\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
@@ -128,5 +130,3 @@ C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.API
 C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.API\obj\Debug\netcoreapp3.1\UdemyNLayerProject.API.dll
 C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.API\obj\Debug\netcoreapp3.1\UdemyNLayerProject.API.pdb
 C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.API\obj\Debug\netcoreapp3.1\UdemyNLayerProject.API.genruntimeconfig.cache
-C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
-C:\Users\islyl\source\repos\isilyilmaz\UdemyNLayerProject\UdemyNLayerProject.API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

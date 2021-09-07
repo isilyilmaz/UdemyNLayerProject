@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UdemyNLayerProject.API.Extensions;
+using UdemyNLayerProject.API.Filters;
 using UdemyNLayerProject.Core.Repositories;
 using UdemyNLayerProject.Core.Services;
 using UdemyNLayerProject.Core.UnitOfWorks;
@@ -34,7 +36,7 @@ namespace UdemyNLayerProject.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(Startup));
-
+            services.AddScoped<NotFoundFilter>();
             //AddScoped() ne yapar?
             //Bir Request esnasinda IUnitOfWork ile bir classin constructer inda karsilasirsa;
             //gidecek UnitOfWork ten bir nesne ornegi alacak.
@@ -70,6 +72,12 @@ namespace UdemyNLayerProject.API
             );
 
             services.AddControllers();
+
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                //default false olur, kendim hatayi ele alacagimdan dolayi true yaptim
+                options.SuppressModelStateInvalidFilter = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -79,13 +87,8 @@ namespace UdemyNLayerProject.API
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
 
+            app.UseCustomException();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

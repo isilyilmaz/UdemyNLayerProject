@@ -17,10 +17,10 @@ namespace UdemyNLayerProject.Core.Services
         // Asenkron içerik olması için Task oluşturuyoruz.
 
         //id ye göre nesne getir
-        Task<TEntity> getByIdAsync(int id);
+        Task<TEntity> GetByIdAsync(int id);
         
         //tüm nesneleri getir
-        Task<IEnumerable<TEntity>> getAllAsync();
+        Task<IEnumerable<TEntity>> GetAllAsync();
 
         // daha sonra bu şekilde kullanılabilecek; where(x=> x.id = 2)
         //Expression<Func<TEntity, bool>> bu ifade delegate olarak geçiyor.

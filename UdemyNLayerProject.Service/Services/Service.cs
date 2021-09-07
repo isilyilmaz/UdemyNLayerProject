@@ -38,12 +38,12 @@ namespace UdemyNLayerProject.Service.Services
             return entities;
         }
 
-        public async Task<IEnumerable<TEntity>> getAllAsync()
+        public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
             return await _repository.getAllAsync();
         }
 
-        public async Task<TEntity> getByIdAsync(int id)
+        public async Task<TEntity> GetByIdAsync(int id)
         {
             return await _repository.getByIdAsync(id);
         }

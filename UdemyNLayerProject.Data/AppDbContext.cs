@@ -25,6 +25,8 @@ namespace UdemyNLayerProject.Data
 
         public DbSet<Product> Products { get; set; }
 
+        public DbSet<Person> Persons { get; set; }
+
         //tablolar oluşurken oluşmadan önce çalışacak method
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -33,6 +35,7 @@ namespace UdemyNLayerProject.Data
             //Önce Tablolar Oluşacak.
             modelBuilder.ApplyConfiguration(new ProductConfiguration());
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new PersonConfiguration());
 
             //Sonra Datalarımız İlgili Tablolara Eklenecek.
             modelBuilder.ApplyConfiguration(new ProductSeed(new int[] { 1, 2 }));
