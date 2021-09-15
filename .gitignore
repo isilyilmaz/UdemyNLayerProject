@@ -1,0 +1,19 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/UdemyNLayerProject.Service/bin/Release/netcoreapp3.1
+/UdemyNLayerProject.Data/bin/Release/netcoreapp3.1
+/UdemyNLayerProject.API/bin/Release/netcoreapp3.1
+/UdemyNLayerProject.API/obj/Release/netcoreapp3.1
+/UdemyNLayerProject.Service/obj/Release/netcoreapp3.1
+/UdemyNLayerProject.Core/bin/Release/netcoreapp3.1
+/UdemyNLayerProject.Core/obj/Debug/netcoreapp3.1
+/UdemyNLayerProject.Data/obj/Release/netcoreapp3.1
+/UdemyNLayerProject.Core/obj/Release/netcoreapp3.1
+/.vs/UdemyNLayerProject/v16/TestStore/0
+/UdemyNLayerProject.Test/bin/Debug/netcoreapp3.1
+/UdemyNLayerProject.Test/bin/Release/netcoreapp3.1
+/UdemyNLayerProject.Test/obj/Debug/netcoreapp3.1
+/UdemyNLayerProject.Test/obj/Release/netcoreapp3.1
+/UdemyNLayerProject.Test/obj
