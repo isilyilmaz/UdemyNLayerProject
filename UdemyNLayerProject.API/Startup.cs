@@ -36,7 +36,8 @@ namespace UdemyNLayerProject.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(Startup));
-            services.AddScoped<NotFoundFilter>();
+            services.AddScoped<CategoryNotFoundFilter>();
+            services.AddScoped<ProductNotFoundFilter>();
             //AddScoped() ne yapar?
             //Bir Request esnasinda IUnitOfWork ile bir classin constructer inda karsilasirsa;
             //gidecek UnitOfWork ten bir nesne ornegi alacak.

@@ -9,11 +9,11 @@ using UdemyNLayerProject.Core.Services;
 
 namespace UdemyNLayerProject.API.Filters
 {
-    public class NotFoundFilter : ActionFilterAttribute
+    public class ProductNotFoundFilter : ActionFilterAttribute
     {
         private readonly IProductService _productService;
 
-        public NotFoundFilter(IProductService productService)
+        public ProductNotFoundFilter(IProductService productService)
         {
             _productService = productService;
         }

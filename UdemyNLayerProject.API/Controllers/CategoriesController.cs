@@ -39,7 +39,15 @@ namespace UdemyNLayerProject.API.Controllers
         public async Task<IActionResult> GetById(int id)
         {
             var category = await _categoryService.GetByIdAsync(id);
-            return Ok(_mapper.Map<CategoryDto>(category));
+
+            if (category == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(_mapper.Map<CategoryDto>(category));
+            }
         }
 
         [HttpGet("{id}/products")]
