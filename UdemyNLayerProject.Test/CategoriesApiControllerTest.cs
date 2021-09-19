@@ -168,5 +168,83 @@ namespace UdemyNLayerProject.Test
 
         }
 
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        public async void Save_ActionExecutes_ReturnNoContent(int categoryId)
+        {
+            var savedCategory = _categories.First(i => i.Id == categoryId);       
+            var categoryDto = _mapper.Map<CategoryDto>(savedCategory);
+
+            //Setup parameters for behaviour
+            _mockService.Setup(x => x.AddAsync(It.IsAny<Category>())).ReturnsAsync(
+                (Category category) => { 
+                    category = _mapper.Map<Category>(categoryDto); 
+                    return category;
+                });
+
+            //Call the method for test
+            var result = await _categoriesController.Save(categoryDto);
+
+            //This method runs one time.
+            _mockService.Verify(x => x.AddAsync(It.IsAny<Category>()), Times.Once);
+
+            //Control results
+            var okResult = Assert.IsType<CreatedResult>(result);
+
+            var returnCategory = Assert.IsAssignableFrom<CategoryDto>(okResult.Value);
+
+            Assert.Equal(savedCategory.Id, returnCategory.Id);
+
+            Assert.Equal(savedCategory.Name, returnCategory.Name);
+
+        }
+
+            [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        public void Update_ActionExecutes_ReturnNoContent(int categoryId)
+        {
+            Category updatedCategory = _categories.First(i => i.Id == categoryId);
+            CategoryDto categoryDto = _mapper.Map<CategoryDto>(updatedCategory);
+            
+            //Setup parameters for behaviour
+            _mockService.Setup(x => x.Update(It.IsAny<Category>())).Returns(
+                (Category category) => {
+                    category = _mapper.Map<Category>(categoryDto);
+                    return category;
+                });
+
+            //Call the method for test
+            var result = _categoriesController.Update(categoryDto);
+
+            //this method runs one time.
+            _mockService.Verify(x => x.Update(It.IsAny<Category>()), Times.Once);
+
+            //Control results
+            Assert.IsType<NoContentResult>(result);
+        }
+
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        public void Remove_ActionExecutes_ReturnNoContent(int categoryId)
+        {
+            Category category = _categories.First(i => i.Id == categoryId);
+
+            //Setup parameters for behaviour
+            _mockService.Setup(x => x.GetByIdAsync(categoryId)).ReturnsAsync(category);
+            _mockService.Setup(x => x.Remove(category));
+
+            //Call the method for test
+            var result = _categoriesController.Remove(categoryId);
+
+            //this method runs one time.
+            _mockService.Verify(x => x.Remove(category), Times.Once);
+
+            //Control results
+            Assert.IsType<NoContentResult>(result);
+        }
+
     }
 }
